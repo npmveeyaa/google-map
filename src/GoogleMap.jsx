@@ -42,10 +42,22 @@ const GoogleMap = ({
     return null;
   }
 
+  // Convert height to string with 'px' if it's a number
+  const heightValue = typeof height === 'number' ? `${height}px` : height;
+  const widthValue = typeof width === 'number' ? `${width}px` : width;
+
   const containerStyle = {
     width: '100%',
+    height: heightValue,
     overflow: 'hidden',
     ...style
+  };
+
+  const iframeStyle = {
+    border: 0,
+    width: '100%',
+    height: '100%',
+    display: 'block'
   };
 
   return (
@@ -57,9 +69,9 @@ const GoogleMap = ({
         className={className}
         title={title}
         src={embedUrl}
-        width={width}
-        height={height}
-        style={{ border: 0 }}
+        width={widthValue}
+        height={heightValue}
+        style={iframeStyle}
         allowFullScreen={allowFullScreen}
         loading={loading}
         referrerPolicy={referrerPolicy}

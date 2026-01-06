@@ -1,6 +1,6 @@
 {
   "name": "@veeyaainnovatives/google-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A reusable Google Maps embed component for React applications",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
